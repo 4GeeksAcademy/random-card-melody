@@ -22,28 +22,4 @@ window.onload = function() {
   document.querySelector("#button").addEventListener("click", randomCardGen);
 };
 
-/* setInterval(randomCardGen, 10000); */
-
-function startCountdown(seconds) {
-  let counter = seconds;
-
-  const interval = setInterval(() => {
-    counter--;
-
-    if (counter == 0) {
-      randomCardGen();
-      counter = 10;
-    }
-  }, 1000);
-}
-
-/* function newCardCountdown(){
-  counterID= setInterval(()=>{
-    counterTime--;
-    if(counterTime==0){
-     generateRandomCard();
-     counterTime= 10;
-    }
-    counterElement.innerHTML= counterTime;
-  }, 1000);
-} */
+setInterval(randomCardGen, 10000);
