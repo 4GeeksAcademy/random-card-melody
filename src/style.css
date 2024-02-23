@@ -1,1 +1,47 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
+body {
+  background-color: green;
+  width: 50%;
+  margin: auto;
+}
+p {
+  font-size: 70px;
+}
+
+.card {
+  margin: auto;
+  margin-top: 30%;
+  width: 150px;
+  height: 250px;
+  justify-content: space-between;
+  border-radius: 5%;
+}
+
+#topSuit {
+  text-align: start;
+  position: relative;
+  font-size: 300%;
+}
+
+#bottomSuit {
+  font-size: 300%;
+  transform: rotate(180deg);
+  text-align: left;
+}
+
+#number {
+  font-size: 300%;
+  position: relative;
+}
+
+.button {
+  text-align: center;
+  margin-top: 2%;
+}
+
+.black {
+  color: black;
+}
+.red {
+  color: red;
+}
