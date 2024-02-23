@@ -5,43 +5,7 @@ import "./style.css";
 import "./assets/img/rigo-baby.jpg";
 import "./assets/img/4geeks.ico";
 
-const topSuit = document.getElementById("topSuit");
-const number = document.getElementById("number");
-const bottomSuit = document.getElementById("bottomSuit");
-
-function cardGenerator() {
-  let cardNumber = [
-    "A",
-    "2",
-    "3",
-    "4",
-    "5",
-    "6",
-    "7",
-    "8",
-    "9",
-    "10",
-    "J",
-    "Q",
-    "K"
-  ];
-
-  let cardSuit = ["♦", "♥", "♠", "♣"];
-  let randomNumber = Math.floor(Math.random() * cardNumber.length);
-  let randomSuit = Math.floor(Math.random() * cardSuit.length);
-}
-
-topSuit.innerText = cardSuit[randomSuit];
-bottomSuit.innerText = cardSuit[randomSuit];
-Number.innerText = cardNumber[randomNumber];
-
-window.onload = () => {
-  document.querySelector("#button").addEventListener("click", () => {
-    document.querySelector(".card").innerHTML = cardGenerator();
-  });
-};
-
-/* function button() {
+function randomCardGen() {
   let value = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "J", "Q", "K"];
   let suit = ["♦", "♥", "♠", "♣"];
   let randomValue = Math.floor(Math.random() * value.length);
@@ -51,4 +15,35 @@ window.onload = () => {
   document.querySelector("#number").innerHTML = value[randomValue];
   document.querySelector(".card").style.color =
     randomSuit <= 1 ? "red" : "black";
+}
+
+window.onload = function() {
+  randomCardGen();
+  document.querySelector("#button").addEventListener("click", randomCardGen);
+};
+
+/* setInterval(randomCardGen, 10000); */
+
+function startCountdown(seconds) {
+  let counter = seconds;
+
+  const interval = setInterval(() => {
+    counter--;
+
+    if (counter == 0) {
+      randomCardGen();
+      counter = 10;
+    }
+  }, 1000);
+}
+
+/* function newCardCountdown(){
+  counterID= setInterval(()=>{
+    counterTime--;
+    if(counterTime==0){
+     generateRandomCard();
+     counterTime= 10;
+    }
+    counterElement.innerHTML= counterTime;
+  }, 1000);
 } */
